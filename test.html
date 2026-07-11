@@ -7,6 +7,8 @@
   <h1>Fake Telemetry Stream</h1>
   <pre id="output">Waiting for data...</pre>
 
+  <button id="testButton">Send Test Command</button>
+
   <script>
     const socket = new WebSocket("ws://localhost:3000");
 
@@ -18,6 +20,16 @@
     socket.onopen = () => {
       console.log("Connected to server!");
     };
+
+    document.getElementById("testButton").addEventListener("click", () => {
+      const command = {
+        type: "command",
+        action: "forward",
+        speed: 0.5
+      };
+      socket.send(JSON.stringify(command));
+      console.log("Sent command:", command);
+    });
   </script>
 </body>
 </html>
