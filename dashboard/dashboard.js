@@ -10,6 +10,8 @@ socket.onopen = () => {
 
 socket.onclose = () => {
   connectionStatus.textContent = "Disconnected";
+  connectionStatus.style.color = "var(--accent)";
+  connectionStatus.style.borderColor = "var(--accent)";
 };
 
 socket.onmessage = (event) => {
