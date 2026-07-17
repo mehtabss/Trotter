@@ -13,6 +13,7 @@ Trotter is a personal engineering project combining mechanical design, embedded 
 - **Lolin S2 Mini (ESP32-S2)**: onboard microcontroller, WiFi-enabled, handles servo control and communicates with the web dashboard
 - **0.96" SSD1306 OLED display**: onboard status display
 - **Self-hosted web dashboard**: a browser-based controller and live telemetry viewer, built with Node.js, WebSockets, and vanilla JS
+- **All 3D printed parts made using the Centauri Carbon 2 Combo  
 ---
  
 ## Inspiration
