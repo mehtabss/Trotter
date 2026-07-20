@@ -1,4 +1,4 @@
-# Trotter 🐾
+# Trotter
  
 An open-source, 3D-printed walking quadruped robot. Built with a custom frame, ESP32-based firmware, and a self-hosted web dashboard for real-time control and telemetry.
  
