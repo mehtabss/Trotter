@@ -34,6 +34,21 @@ document.getElementById("forwardButton").addEventListener("click", () => {
   socket.send(JSON.stringify(command));
 });
 
+document.getElementById("backwardButton").addEventListener("click", () => {
+  const command = { type: "command", action: "backward", speed: 0.5 };
+  socket.send(JSON.stringify(command));
+});
+
+document.getElementById("leftButton").addEventListener("click", () => {
+  const command = { type: "command", action: "left", speed: 0.5 };
+  socket.send(JSON.stringify(command));
+});
+
+document.getElementById("rightButton").addEventListener("click", () => {
+  const command = { type: "command", action: "right", speed: 0.5 };
+  socket.send(JSON.stringify(command));
+});
+
 document.getElementById("stopButton").addEventListener("click", () => {
   const command = { type: "command", action: "stop" };
   socket.send(JSON.stringify(command));
