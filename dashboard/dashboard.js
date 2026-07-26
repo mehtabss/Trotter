@@ -2,7 +2,27 @@ const connectionStatus = document.getElementById("connectionStatus");
 const batteryValue = document.getElementById("batteryValue");
 const uptimeValue = document.getElementById("uptimeValue");
 
+const jointChart = document.getElementById("jointChart");
+const ctx = jointChart.getContext("2d");
+
 let socket;
+
+function drawJointChart(angles) {
+  const width = jointChart.width;
+  const height = jointChart.height;
+  const barWidth = width / angles.length;
+
+  ctx.clearRect(0, 0, width, height);
+
+  angles.forEach((angle, index) => {
+    const barHeight = (angle / 180) * height;
+    const x = index * barWidth;
+    const y = height - barHeight;
+
+    ctx.fillStyle = "#ff3b30";
+    ctx.fillRect(x + 4, y, barWidth - 8, barHeight);
+  });
+}
 
 function connect() {
   socket = new WebSocket("ws://localhost:3000");
@@ -24,6 +44,7 @@ function connect() {
     const data = JSON.parse(event.data);
     batteryValue.textContent = data.battery;
     uptimeValue.textContent = data.uptimeSeconds;
+    drawJointChart(data.jointAngles);
   };
 }
 
