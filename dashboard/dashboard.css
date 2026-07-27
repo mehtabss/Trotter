@@ -94,6 +94,26 @@ section h2{
   font-weight: 500;
 }
 
+#jointLabels{
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 4px;
+  margin-top: 10px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--text-dim);
+  text-align: center;
+}
+
+#jointLabels span{
+  display: block;
+}
+
+#jointLabels .angle-value{
+  color: var(--text);
+  font-weight: 500;
+}
+
 button{
   background: none;
   border: 1px solid var(--border-strong);
